@@ -1,0 +1,1 @@
+from game.components.menu_principal import mostrar_menu_principal
