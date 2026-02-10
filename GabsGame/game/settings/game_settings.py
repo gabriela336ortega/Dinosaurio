@@ -2,12 +2,14 @@ from pygame import display, Surface, image
 from pathlib import Path
 from typing import List
 
+__version__ = "0.0.0"
+
 class GameSettings:
     # Pantalla
     SCREEN_HEIGHT: int = 600
     SCREEN_WIDTH: int = 1100
     SCREEM_TITLE = "GabsGame-Dino"
-    SCREEN: Surface = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    SCREEN: tuple = (SCREEN_WIDTH, SCREEN_HEIGHT)
 
     # Rutas
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
@@ -45,4 +47,9 @@ class GameSettings:
     PTERODACTIL: List[Surface] = [
         image.load(PTERODACTIL_ASSTES / "Bird1.png"), 
         image.load(PTERODACTIL_ASSTES / "Bird2.png")
+    ]
+    JUMPING_CACTUS: List[Surface] = [
+        image.load(CACTUS_ASSETS / "SmallCactus1.png"), 
+        image.load(CACTUS_ASSETS / "SmallCactus2.png"),
+        image.load(CACTUS_ASSETS / "SmallCactus3.png")
     ]
