@@ -45,7 +45,6 @@ class JumpingCactus(Obstacle):
         self.is_jumping = True
         self.jump_timer = self.jump_duration
         self.current_height = 0
-        print("🦘 ¡Cactus saltarín activado!")
     
     def update_jump(self):
         """Actualiza la física del salto"""
@@ -78,4 +77,4 @@ class JumpingCactus(Obstacle):
             SCREEN.blit(shadow, (self.rect.x, self.ground_y + 10))
         
         # Dibujar cactus
-        SCREEN.blit(self.image, (self.rect.x, self.rect.y))
+        SCREEN.blit(self.image[0], (self.rect.x, self.rect.y))
