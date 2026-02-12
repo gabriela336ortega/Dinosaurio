@@ -6,7 +6,7 @@ pygame.init()
 
 from game.settings import GameSettings
 from game.components import mostrar_menu_principal
-from game.elements import Cloud, Dinosaur, LargeCactus, SmallCactus, Bird, JumpingCactus, show_credits
+from game.elements import Cloud, Dinosaur, LargeCactus, SmallCactus, Bird, JumpingCactus, DownPterodactyl, show_credits
 
 #FUNCIÓN DE PRUEBA PARA EL JUEGO.
 screen = pygame.display.set_mode(GameSettings.SCREEN)
@@ -68,7 +68,7 @@ def main(screen=screen):
         current_time = pygame.time.get_ticks()
 
         if current_time - last_obstacle_time > obstacle_frequency:
-            obstacle_type = random.randint(0, 3)
+            obstacle_type = random.randint(0, 4)
 
             if obstacle_type == 0:
                 obstacles.append(SmallCactus(GameSettings.SMALL_CACTUS, game_speed))
@@ -76,6 +76,8 @@ def main(screen=screen):
                 obstacles.append(LargeCactus(GameSettings.LARGE_CACTUS, game_speed))
             elif obstacle_type == 2:
                 obstacles.append(JumpingCactus(GameSettings.JUMPING_CACTUS, game_speed))
+            elif obstacle_type == 3:
+                obstacles.append(DownPterodactyl(GameSettings.DOWN_PTERODACTIL, game_speed))
             else:
                 obstacles.append(Bird(GameSettings.PTERODACTIL, game_speed))
             
@@ -89,7 +91,7 @@ def main(screen=screen):
                 player.dead()
                 pygame.time.delay(2000)
                 death_count += 1
-                menu(death_count)
+                menu(death_count, screen=screen)
 
         background()
         score()
@@ -119,7 +121,7 @@ def menu(death_count, screen):
             score = font.render("Tu récord: " + str(points), True, (0, 0, 0))
             scoreRect = score.get_rect()
             scoreRect.center = (GameSettings.SCREEN_WIDTH // 2, GameSettings.SCREEN_HEIGHT // 2 + 50)
-            GameSettings.SCREEN.blit(score, scoreRect)
+            screen.blit(score, scoreRect)
 
         textRect = text.get_rect()
         textRect.center = (GameSettings.SCREEN_WIDTH // 2, GameSettings.SCREEN_HEIGHT // 2)
@@ -133,5 +135,5 @@ def menu(death_count, screen):
                 run = False
             if event.type == pygame.KEYDOWN:
                 main(screen=screen)
-mostrar_menu_principal(screen=screen)
-#menu(death_count = 0, screen=screen)
+#mostrar_menu_principal(screen=screen)
+menu(death_count = 0, screen=screen)
