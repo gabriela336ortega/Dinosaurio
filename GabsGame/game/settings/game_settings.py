@@ -18,6 +18,9 @@ class GameSettings:
     PTERODACTIL_ASSTES: Path = ASSETS_DIR / "birds"
     CACTUS_ASSETS: Path = ASSETS_DIR / "cactus"
     OTHER_ASSETS: Path = ASSETS_DIR / "other"
+    
+    SOUNDS_DIR: Path = ASSETS_DIR / "sounds"
+    MUSIC_DIR: Path = ASSETS_DIR / "music"
 
     # ASSETS
     RUNNING: List[Surface] = [
@@ -52,4 +55,8 @@ class GameSettings:
         image.load(CACTUS_ASSETS / "SmallCactus1.png"), 
         image.load(CACTUS_ASSETS / "SmallCactus2.png"),
         image.load(CACTUS_ASSETS / "SmallCactus3.png")
+    ]
+    DOWN_PTERODACTIL: List[Surface] = [
+        image.load(PTERODACTIL_ASSTES / "Bird1.png"), 
+        image.load(PTERODACTIL_ASSTES / "Bird2.png")
     ]
