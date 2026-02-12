@@ -57,6 +57,6 @@ class GameSettings:
         image.load(CACTUS_ASSETS / "SmallCactus3.png")
     ]
     DOWN_PTERODACTIL: List[Surface] = [
-        image.load(PTERODACTIL_ASSTES / "Bird1.png"), 
-        image.load(PTERODACTIL_ASSTES / "Bird2.png")
+        image.load(PTERODACTIL_ASSTES / "Ghost1.png"), 
+        image.load(PTERODACTIL_ASSTES / "Ghost2.png")
     ]
