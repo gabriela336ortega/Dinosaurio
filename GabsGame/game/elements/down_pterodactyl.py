@@ -3,7 +3,7 @@ import random
 from game.entities.obstacle_base import Obstacle
 
 class DownPterodactyl(Obstacle):
-    """Pterodáctilo que baja para joder de vez en cuando"""
+    """Pterodáctilo que aparece como Dan, para joder de vez en cuando (Dan resolvia, no fastidiaba)"""
     
     def __init__(self, image, game_speed):
         self.image = image
